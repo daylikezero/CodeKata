@@ -2,7 +2,7 @@ class Solution {
     public int[] solution(int n, int m) {
         int min = Math.min(n, m);
         int max = Math.max(n, m);
-        int[] answer = { getGcd(n,m) , getLcd(n,m) };
+        int[] answer = { getGcd(n,m) , getLcm(n,m) };
         return answer;
     }
     
@@ -11,7 +11,7 @@ class Solution {
         return getGcd(min, max % min);
     }
     
-    public static int getLcd(int n, int m) {
+    public static int getLcm(int n, int m) {
         return (n * m) / getGcd(n, m); 
     }
 }
