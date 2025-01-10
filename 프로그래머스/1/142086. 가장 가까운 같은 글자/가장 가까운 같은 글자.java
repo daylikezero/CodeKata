@@ -1,20 +1,17 @@
-import java.util.ArrayList;
-import java.util.List;
-
 class Solution {
     public int[] solution(String s) {
-        List<Integer> list = new ArrayList<>();
+        int[] answer = new int[s.length()];
         // 첫번째 글자는 항상 -1
-        list.add(-1);
+        answer[0] = -1;
         for (int i = 1; i < s.length(); i++) {
             String target = s.substring(0, i);
             int last = target.lastIndexOf(s.charAt(i));
             if (last != -1) {
-                list.add(i - last);
+                answer[i] = i - last;
             } else {
-                list.add(-1);
+                answer[i] = -1;
             }
         }
-        return list.stream().mapToInt(i -> i).toArray();
+        return answer;
     }
 }
