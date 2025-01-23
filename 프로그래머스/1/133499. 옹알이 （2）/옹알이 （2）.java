@@ -23,8 +23,8 @@ class Solution {
             if (word.contains(babble + babble)) {
                 return false;
             }
-            word = word.replaceAll(babble, "0");
+            word = word.replace(babble, "0");
         }
-        return word.replaceAll("0", "").trim().isEmpty();
+        return word.replace("0", "").trim().isEmpty();
     }
 }
