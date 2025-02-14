@@ -8,17 +8,8 @@ class Solution {
                     answer[1]++;
                 }
             }
-            s = base2(s.replace("0", "").length());
+            s = Integer.toBinaryString(s.replace("0", "").length());
         }
         return answer;
-    }
-    
-    public static String base2(int n) {
-        String str = "";
-        while (n != 0) {
-            str = str + n % 2;
-            n /= 2;
-        }
-        return str;
     }
 }
