@@ -2,16 +2,12 @@ import java.util.*;
 
 public class Solution {
     public int[] solution(int []arr) {
-        Queue<Integer> queue = new LinkedList<>();
-        for (int i = 0; i < arr.length; i++) {
-            if (i == 0) {
-                queue.offer(arr[i]);
-                continue;
-            }
+        List<Integer> list = new ArrayList<>();
+        list.add(arr[0]);
+        for(int i = 1; i < arr.length; i++) {
             if (arr[i] != arr[i-1])
-                queue.offer(arr[i]);
+                list.add(arr[i]);
         }
-        int[] answer = queue.stream().mapToInt(i -> i).toArray();
-        return answer;
+        return list.stream().mapToInt(i->i).toArray();
     }
 }
